@@ -57,8 +57,10 @@ class UploadMovie:
                                        scope=self.YOUTUBE_UPLOAD_SCOPE,
                                        message=self.MISSING_CLIENT_SECRETS_MESSAGE)
 
+        import os.path
+        dirname = os.getcwd()
         #storage = Storage("%s-oauth2.json" % sys.argv[0])
-        storage = Storage( "C:\\Users\\Ballista\\Desktop\\auto_kusa_clip\\custom\\upload\\setting.py-oauth2.json" )
+        storage = Storage( dirname + "\\custom\\upload\\setting.py-oauth2.json" )
         credentials = storage.get()
 
         if credentials is None or credentials.invalid:
