@@ -250,17 +250,17 @@ def count_result( target_url, image_save ):
                         kusa_cnt = 0
                         time_start = 0
 
-        print( sorted( time_dic.keys(), reverse=True )[0:5] )
+        print( sorted( time_dic.keys(), reverse=True )[0:3] )
 
         time_sec = []
-        sec_d = sorted( dic.keys(), reverse=True )[0:5]
+        sec_d = sorted( dic.keys(), reverse=True )[0:3]
         for i in sec_d:
             tmp = dic[i] - time_dic.get( i )
             time_sec.append( tmp )
         #print( time_sec )
 
         counts = []
-        count_data = sorted( array_kusa, reverse=True )[0:5]
+        count_data = sorted( array_kusa, reverse=True )[0:3]
         counts.append( count_data )
         counts.append( [all_kusa_cnt] )
 

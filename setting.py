@@ -55,7 +55,7 @@ def set_upload( target_url, livers, com_cnt, video_path ):
         up_title    = "【2分切り抜き】笑えるランキング" + title
 
         zoku_des    = "【続編】\n"
-        for sec, cnt in zip( com_cnt, range( 5 ) ):
+        for sec, cnt in zip( com_cnt, range( 3 ) ):
             zoku_des += "【第 " + str( cnt + 1 ) + " 位】\nhttps://youtu.be/" + target_url + "?t=" + str( com_cnt[cnt] ) + "\n"
 
         honp_des    = "\n【本編】\n" + video_path[1] + "\n" + video_path[0] + "\n\n"
@@ -98,7 +98,7 @@ def main( target_url ):
 
         print( comment_count )
 
-        for i, num, count in zip( comment_count, range( 5 ), counts[0] ):
+        for i, num, count in zip( comment_count, range( 3 ), counts[0] ):
             #文字付きの画像を作成
             img_create_self.create( num + 1, str( count ), counts[1][0] )
             #動画を二分に切り抜く。( filepath, start_sec, stop_sec, youtube_url, sec, num )
@@ -140,7 +140,7 @@ def main( target_url ):
     return comment_count, video_path, counts
 
 if __name__ == '__main__':
-    target_url = 'aE1iMqZAu3g'
+    target_url = '2qwVzZkulIA'
     b_upload = True
 
     comment_count, video_path, count = main( target_url )
@@ -148,7 +148,7 @@ if __name__ == '__main__':
     if b_upload:
         print( "upload Run : " + str( b_upload ) )
         #1.出演しているライバーを入力
-        livers = ["卯月コウ", "魔界ノりりむ", "笹木咲", "リゼ・ヘルエスタ", "社築"]
+        livers = ["アルス・アルマル"]
 
         video_id = set_upload( target_url, livers, comment_count, video_path )
 

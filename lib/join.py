@@ -18,7 +18,7 @@ class Join:
             if not os.path.exists( self.dir + "/end_out_" + self.target_url + ".mp4" ):
                 # ディレクトリ内の動画をリストで取り出す
                 files   = []
-                num     = [ 0, 1, 2, 3, 4 ]
+                num     = [ 0, 1, 2 ]
 
                 for s, i in zip( sec, num ):
                     files.append( self.dir + "/next/"  + str( i ) + "_nextout_" + self.target_url + ".mp4" )
@@ -67,13 +67,9 @@ class Join:
             sound2      = AudioSegment.from_file( "video\clip/" + self.target_url + "/mp3/1_clip_" + str(sec[1]) + ".mp3",  "mp3" )
             sound3_1    = AudioSegment.from_file( "video/bgm/3s.mp3", "mp3" )
             sound3      = AudioSegment.from_file( "video\clip/" + self.target_url + "/mp3/2_clip_" + str(sec[2]) + ".mp3",  "mp3" )
-            sound4_1    = AudioSegment.from_file( "video/bgm/3s.mp3", "mp3" )
-            sound4      = AudioSegment.from_file( "video\clip/" + self.target_url + "/mp3/3_clip_" + str(sec[3]) + ".mp3",  "mp3" )
-            sound5_1    = AudioSegment.from_file( "video/bgm/3s.mp3", "mp3" )
-            sound5      = AudioSegment.from_file( "video\clip/" + self.target_url + "/mp3/4_clip_" + str(sec[4]) + ".mp3",  "mp3" )
             sound6      = AudioSegment.from_file( "video/bgm/end.mp3", "mp3" )
 
-            sound = sound1_1 + sound1 + sound2_1 + sound2 + sound3_1 + sound3 + sound4_1 + sound4 + sound5_1 + sound5 + sound6
+            sound = sound1_1 + sound1 + sound2_1 + sound2 + sound3_1 + sound3 + sound6
             # 保存
             sound.export( "mp3_out_" + self.target_url + ".mp3", format = "mp3" )
 
